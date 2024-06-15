@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pick the better generation</h1>
+        </div>
+        <div class="prompt-section">
+            <h2>Prompt</h2>
+            <p id="prompt-content"></p>
+        </div>
+        <div class="models">
+            <div class="model" id="modelA">
+                <h2>Option A</h2>
+                <p id="modelA-content"></p>
+                <button id="buttonA" onclick="selectOption('A')">Choose A</button>
+            </div>
+            <div class="model" id="modelB">
+                <h2>Option B</h2>
+                <p id="modelB-content"></p>
+                <button id="buttonB" onclick="selectOption('B')">Choose B</button>
+            </div>
+        </div>
+        <div class="input-section">
+            <h3>Why did you choose this option?</h3>
+            <form id="reason-form">
+                <label><input type="radio" name="reason" value="More coherent"> More coherent</label><br>
+                <label><input type="radio" name="reason" value="More creative"> More creative</label><br>
+                <label><input type="radio" name="reason" value="More informative"> More informative</label><br>
+                <label><input type="radio" name="reason" value="Other"> Other:</label>
+                <textarea id="reason-input" placeholder="Explain your choice..." disabled></textarea>
+            </form>
+            <button id="submit-reason" onclick="submitReason()" disabled>Submit Reason</button>
+        </div>
+        <div class="input-section">
+            <button onclick="newRound()">New Round</button>
+        </div>
+        <div class="input-section">
+            <button id="no-preference" onclick="selectOption('No Preference')">No Preference</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
